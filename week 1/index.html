@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>에어비앤비</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.ico">
+</head>
+
+<body>
+    <div class="black">
+        <header>
+            <div class="top">
+                <div class="logo">
+                    <i class="fa-brands fa-airbnb"></i>
+                    <span>airbnb</span>
+                </div>
+                <div class="selections">
+                    <span class="selection">숙소</span>
+                    <span class="selection">체험</span>
+                    <span class="selection">온라인 체험</span>
+                </div>
+                <div class="selections2">
+                    <input placeholder="검색 시작하기">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div>
+                    <ul>
+                        <li><a>호스트 되기</a></li>
+                        <li><a>🌐</a></li>
+                        <li>
+                            <div class="action" onclick="menuToggle();">
+                                <div class="profile" >
+                                    <i class="fa-solid fa-bars"></i>
+                                    <i class="fa-solid fa-circle-user"></i>
+                                </div>
+                                <div class="menu">
+                                    <h3>회원가입<br></h3>
+                                    <h3>로그인<br></h3>
+                                    <h3>숙소 호스트 되기<br></h3>
+                                    <h3>체험 호스팅하기<br></h3>
+                                    <h3>도움말<br></h3>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="input">
+                <div>
+                    <label>
+                        <div>위치</div>
+                        <input placeholder="어디로 여행가세요?"></input>
+                    </label>
+                </div>
+                <div class="border">
+                    <div>체크인</div>
+                    <div class="subs">날짜 입력</div>
+                </div>
+                <div class="border">
+                    <div>체크아웃</div>
+                    <div class="subs">날짜 입력</div>
+                </div>
+                <div class="border">
+                    <div>인원</div>
+                    <div class="subs">게스트 추가</div>
+                </div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </header>
+        <div class="banner">
+            <div>
+                <div class="title">에어비앤비가<br /> 여행지를 찾아드릴게요!</div><br />
+                <button class="button" onclick="location.href='search.html'"><span>유연한 검색</span></button>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="margin">
+            <div>
+                <span class="title">설레는 다음 여행을 위한 아이디어</span>
+            </div>
+            <div class="tabs">
+                <div class="tab1">
+                    <div class="img1"></div>
+                    <div>
+                        <span class="city">제주도(Jeju)</span><br />
+                        <span class="distance">455km 거리</span>
+                    </div>
+                </div>
+                <div class="tab2">
+                    <div class="img2"></div>
+                    <div>
+                        <span class="city">부산</span><br />
+                        <span class="distance">324km 거리</span>
+                    </div>
+                </div>
+                <div class="tab3">
+                    <div class="img3"></div>
+                    <div>
+                        <span class="city">강릉시</span><br />
+                        <span class="distance">166km 거리</span>
+                    </div>
+                </div>
+                <div class="tab4">
+                    <div class="img4"></div>
+                    <div>
+                        <span class="city">속초시</span><br />
+                        <span class="distance">157km 거리</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="margin">
+            <div>
+                <span class="title">에어비앤비 체험 둘러보기</span>
+            </div>
+            <div class="experience">
+                <div class="tab1">
+                    <div class="image1">
+                        <span class="subtitle">여행 중 만나는<br /> 이색적인 즐길 거리<br /></span>
+                        <button class="button" onclick="location.href='nearby.html'">체험</button>
+                    </div>
+                </div>
+                <div class="tab2">
+                    <div class="image2">
+                        <span class="subtitle">집에서 만나는<br /> 다양한 즐길 거리<br /></span>
+                        <button class="button">온라인 체험</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="margin">
+            <div class="image3">
+                <span class="title">호스팅에 관해<br /> 궁금하신 점이<br /> 있나요?</span>
+                <button class="button">슈퍼호스트에게 물어보세요</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="tabs">
+            <div class="tab1">
+                <h3>에어비앤비 지원</h3>
+                <ul>
+                    <li>도움말 센터</li>
+                    <li>안전 정보</li>
+                    <li>예약 취소 옵션</li>
+                    <li>에어비앤비의 코로나19 대응 방안</li>
+                    <li>장애인 지원</li>
+                    <li>이웃 민원 신고</li>
+                </ul>
+            </div>
+            <div class="tab2">
+                <h3>커뮤니티</h3>
+                <ul>
+                    <li>Airbnb.org: 재난 구호 숙소</li>
+                    <li>아프간 난민 지원</li>
+                    <li>다양성과 소속감 증진</li>
+                    <li>차별 철폐를 위한 노력</li>
+                </ul>
+            </div>
+            <div class="tab3">
+                <h3>호스팅</h3>
+                <ul>
+                    <li>호스팅 시작하기</li>
+                    <li>에어커버: 호스트를 위한 보호 프로그램</li>
+                    <li>호스팅 자료 둘러보기</li>
+                    <li>커뮤니티 포럼 방문하기</li>
+                    <li>책임감 있는 호스팅</li>
+                    <li>책임감 있는 호스팅</li>
+                </ul>
+            </div>
+            <div class="tab4">
+                <h3>소개</h3>
+                <ul>
+                    <li>뉴스룸</li>
+                    <li>새로운 기능에 대해 알아보기</li>
+                    <li>에어비앤비 공동창업자의 메세지</li>
+                    <li>채용정보</li>
+                    <li>투자자 정보</li>
+                    <li>에어비앤비 Luxe</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <span class="left">© 2022 Airbnb,Inc. · 개인정보 처리방침 · 이용양관 · 사이트맵 · 한국의 변경된 환불 정책 · 회사 세부정보</span>
+            <span class="right">
+                🌐
+                <span class="underline">한국어 (KR)</span>
+                ₩
+                <span class="underline">KRW</span>
+                <span class="fa fa-facebook"></span>
+                <span class="fa fa-twitter"></span>
+                <span class="fa fa-instagram"></span>
+            </span>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+    <script src="https://kit.fontawesome.com/89e28daf2a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

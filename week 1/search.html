@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>에어비앤비</title>
+    <link href="search.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="logo" onclick="location.href='index.html'">
+                <i class="fa-brands fa-airbnb"></i>
+                <span>airbnb</span>
+            </div>
+            <div class="selections">
+                <span class="selection">숙소</span>
+                <span class="selection">체험</span>
+                <span class="selection">온라인 체험</span>
+            </div>
+            <div class="selections2">
+                <input placeholder="검색 시작하기">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="host">
+                <ul>
+                    <li><a style="color: black;">호스트 되기</a></li>
+                    <li><a>🌐</a></li>
+                    <li>
+                        <div class="action" onclick="menuToggle();">
+                            <div class="profile">
+                                <i class="fa-solid fa-bars"></i>
+                                <i class="fa-solid fa-circle-user"></i>
+                            </div>
+                            <div class="menu">
+                                <h3>회원가입<br></h3>
+                                <h3>로그인<br></h3>
+                                <h3>숙소 호스트 되기<br></h3>
+                                <h3>체험 호스팅하기<br></h3>
+                                <h3>도움말<br></h3>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="input">
+            <div class="borders">
+                <div>농장</div>
+            </div>
+            <div class="border">
+                <div>해변 근처</div>
+            </div>
+            <div class="border">
+                <div>멋진 수영장</div>
+            </div>
+            <div class="border">
+                <div>하우스보트</div>
+            </div>
+            <div class="border">
+                <div>통나무집</div>
+            </div>
+            <div class="border">
+                <div>초소형 주택</div>
+            </div>
+            <div class="border">
+                <div>트리하우스</div>
+            </div>
+            <div class="border">
+                <div>Luxe</div>
+            </div>
+            <div class="border">
+                <div>캠핑카</div>
+            </div>
+            <div class="border">
+                <div>개성 넘치는 숙소</div>
+            </div>
+            <div class="border">
+                <div>료칸</div>
+            </div>
+            <div class="border">
+                <div>헛간</div>
+            </div>
+            <div class="border">
+                <div>성</div>
+            </div>
+            <div class="border">
+                <div>더 보기</div>
+            </div>
+            <span>언제든 <div class="fa-solid fa-angle-down"></div></span>
+            <span>인원 <div class="fa-solid fa-angle-down"></div></span>
+            <span>
+                <div class="fa-solid fa-filter"></div> 필터
+            </span>
+        </div>
+    </header>
+    <section>
+        <div class="margin">
+            <div class="tabs">
+                <div class="tab1">
+                    <div class="img1"></div>
+                    <div>
+                        <span class="city">Namwon-eup<span class="right">₩249,866 / 박</span></span><br />
+                        <span class="distance">477km 거리<span class="right">7월 31일 ~ 10일</span></span>
+                    </div>
+                </div>
+                <div class="tab2">
+                    <div class="img2"></div>
+                    <div>
+                        <span class="city">Gujwa-eup, Cheju, 제주도<span class="right">₩271,628 / 박</span></span><br />
+                        <span class="distance">447km 거리<span class="right">2월 28일 ~ 3월 7일</span></span>
+                    </div>
+                </div>
+                <div class="tab3">
+                    <div class="img3"></div>
+                    <div>
+                        <span class="city">Hangyeong-myeon,Jeju<span class="right">₩173,294 / 박</span></span><br />
+                        <span class="distance">479km 거리<span class="right">4월 8일 ~ 15일</span></span>
+                    </div>
+                </div>
+                <div class="tab4">
+                    <div class="img4"></div>
+                    <div>
+                        <span class="city">Seogwipo-si,제주도<span class="right">₩61,280 / 박</span></span><br />
+                        <span class="distance">478km 거리<span class="right">3월 4일 ~ 11일</span></span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img5"></div>
+                    <div>
+                        <span class="city">Gujwa-eup, Jeju<span class="right">₩66,413 / 박</span></span><br />
+                        <span class="distance">451km 거리<span class="right">5월 30일 ~ 6월 6일</span></span>
+                    </div>
+                </div>
+                <div class="tab2">
+                    <div class="img6"></div>
+                    <div>
+                        <span class="city">Hallim-eub, 제주<span class="right">₩166,362 / 박</span><span
+                                class="right">a</span></span><br />
+                        <span class="distance">324km 거리<span class="right">3월 4일 ~ 11일</span></span>
+                    </div>
+                </div>
+                <div class="tab3">
+                    <div class="img7"></div>
+                    <div>
+                        <span class="city">일동면, 포천시, 경기도<span class="right">₩189,559 / 박</span></span><br />
+                        <span class="distance">166km 거리<span class="right">3월 6일 ~ 13일</span></span>
+                    </div>
+                </div>
+                <div class="tab4">
+                    <div class="img8"></div>
+                    <div>
+                        <span class="city">Ha-myeon, Gapyeong<span class="right">₩311,228 / 박</span></span><br />
+                        <span class="distance">157km 거리<span class="right">3월 20일 ~ 27일</span></span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img9"></div>
+                    <div>
+                        <span class="city">Seojong-myeon<span class="right">₩143,917 / 박</span></span><br />
+                        <span class="distance">425km 거리<span class="right">4월 10일 ~ 17일</span></span>
+                    </div>
+                </div>
+                <div class="tab2">
+                    <div class="img10"></div>
+                    <div>
+                        <span class="city">포천시, 경기도<span class="right">₩187,050 / 박</span><span
+                                class="right">a</span></span><br />
+                        <span class="distance">354km 거리<span class="right">2월 28일 ~ 3월 7일</span></span>
+                    </div>
+                </div>
+                <div class="tab3">
+                    <div class="img11"></div>
+                    <div>
+                        <span class="city">Yangju-si, 경기도<span class="right">₩187,991 / 박</span></span><br />
+                        <span class="distance">166km 거리<span class="right">3월 6일 ~ 13일</span></span>
+                    </div>
+                </div>
+                <div class="tab4">
+                    <div class="img12"></div>
+                    <div>
+                        <span class="city">Seojong-myeon<span class="right">₩181,959 / 박</span></span><br />
+                        <span class="distance">273km 거리<span class="right">2월 13일 ~ 20일</span></span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img13"></div>
+                    <div>
+                        <span class="city">중구, 인천(Incheon)<span class="right">₩184,847 / 박</span></span><br />
+                        <span class="distance">318km 거리<span class="right">3월 4일 ~ 11일</span></span>
+                    </div>
+                </div>
+                <div class="tab2">
+                    <div class="img14"></div>
+                    <div>
+                        <span class="city">Sinbuk-myeon<span class="right">₩109,637 / 박</span></span><br />
+                        <span class="distance">224km 거리<span class="right">2월 18일 ~ 25일</span></span>
+                    </div>
+                </div>
+                <div class="tab3">
+                    <div class="img15"></div>
+                    <div>
+                        <span class="city">Jangheung-myeon<span class="right">₩313,580 / 박</span></span><br />
+                        <span class="distance">128km 거리<span class="right">2월 18일 ~ 25일</span></span>
+                    </div>
+                </div>
+                <div class="tab4">
+                    <div class="img16"></div>
+                    <div>
+                        <span class="city">Buleun-myeon<span class="right">₩205,477 / 박</span></span><br />
+                        <span class="distance">386km 거리<span class="right">2월 14일 ~ 21일</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="tabs">
+            <div class="tab1">
+                <h3>에어비앤비 지원</h3>
+                <ul>
+                    <li>도움말 센터</li>
+                    <li>안전 정보</li>
+                    <li>예약 취소 옵션</li>
+                    <li>에어비앤비의 코로나19 대응 방안</li>
+                    <li>장애인 지원</li>
+                    <li>이웃 민원 신고</li>
+                </ul>
+            </div>
+            <div class="tab2">
+                <h3>커뮤니티</h3>
+                <ul>
+                    <li>Airbnb.org: 재난 구호 숙소</li>
+                    <li>아프간 난민 지원</li>
+                    <li>다양성과 소속감 증진</li>
+                    <li>차별 철폐를 위한 노력</li>
+                </ul>
+            </div>
+            <div class="tab3">
+                <h3>호스팅</h3>
+                <ul>
+                    <li>호스팅 시작하기</li>
+                    <li>에어커버: 호스트를 위한 보호 프로그램</li>
+                    <li>호스팅 자료 둘러보기</li>
+                    <li>커뮤니티 포럼 방문하기</li>
+                    <li>책임감 있는 호스팅</li>
+                    <li>책임감 있는 호스팅</li>
+                </ul>
+            </div>
+            <div class="tab4">
+                <h3>소개</h3>
+                <ul>
+                    <li>뉴스룸</li>
+                    <li>새로운 기능에 대해 알아보기</li>
+                    <li>에어비앤비 공동창업자의 메세지</li>
+                    <li>채용정보</li>
+                    <li>투자자 정보</li>
+                    <li>에어비앤비 Luxe</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <span class="left">© 2022 Airbnb,Inc. · 개인정보 처리방침 · 이용양관 · 사이트맵 · 한국의 변경된 환불 정책 · 회사 세부정보</span>
+            <span class="right">
+                🌐
+                <span class="underline">한국어 (KR)</span>
+                ₩
+                <span class="underline">KRW</span>
+                <span class="fa fa-facebook"></span>
+                <span class="fa fa-twitter"></span>
+                <span class="fa fa-instagram"></span>
+            </span>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+    <script src="https://kit.fontawesome.com/89e28daf2a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>에어비앤비</title>
+    <link href="nearby.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="img/favicon.ico">
+</head>
+
+<body>
+    <header>
+        <div class="top">
+            <div class="logo" onclick="location.href='index.html'">
+                <i class="fa-brands fa-airbnb"></i>
+                <span>airbnb</span>
+            </div>
+            <div class="selections">
+                <span class="selection">숙소</span>
+                <span class="selection">체험</span>
+                <span class="selection">온라인 체험</span>
+            </div>
+            <div class="selections2">
+                <input placeholder="근처 추천 장소 | 날짜 입력하기">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="host">
+                <ul>
+                    <li><a style="color: black;">호스트 되기</a></li>
+                    <li><a>🌐</a></li>
+                    <li>
+                        <div class="action" onclick="menuToggle();">
+                            <div class="profile">
+                                <i class="fa-solid fa-bars"></i>
+                                <i class="fa-solid fa-circle-user"></i>
+                            </div>
+                            <div class="menu">
+                                <h3>회원가입<br></h3>
+                                <h3>로그인<br></h3>
+                                <h3>숙소 호스트 되기<br></h3>
+                                <h3>체험 호스팅하기<br></h3>
+                                <h3>도움말<br></h3>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="border1">
+            <div class="input">
+                <span>인원<div class="fa-solid fa-angle-down"></div></span>
+                <span>요금<div class="fa-solid fa-angle-down"></div></span>
+                <span>체험 진행 언어<div class="fa-solid fa-angle-down"></div></span>
+                <span>시간<div class="fa-solid fa-angle-down"></div></span>
+                <span>문화예술</span>
+                <span>엔터테인먼트</span>
+                <span>식음료</span>
+                <span>스포츠</span>
+                <span>투어</span>
+                <span>관광</span>
+                <span>웰빙</span>
+                <span>자연 및 야외활동</span>
+                <span>
+                    <div class="fa-solid fa-filter"></div>필터
+                </span>
+            </div>
+        </div>
+        <div class="videos">
+            <div class="title">현지인이<br/> 호스팅하는 잊지<br/> 못할 액티비티</div>
+            <div>
+                <video class="video" src="./video/1.mp4" autoplay muted width="330px" height="440px"></video>
+                <div>
+                    <span><span style="color: red;">★</span> 4.99 (181)</span><br/>
+                    <span>그녀와 함께하는 수제도장 만들기</span><br/>
+                    <span>호스트: Helen</span>
+                </div>
+            </div>
+        </div>
+        <div class="margin">
+            <div>체험 162개</div><br />
+            <div class="title">내 주변 체험 보기</div><br />
+            <div>예약하기 전에 코로나19 관련 여행 제한 사항을 확인하세요. <span class="underline">자세히 알아보기</span></div><br />
+            <span>
+                <span class="subtitle">이번 주말 진행 되는 체험</span>
+                <span class="right"><span class="underline">보기(75개)</span></span>
+            </span>
+            <div class="tabs">
+                <div class="tab1">
+                    <div class="img7"></div>
+                    <div>
+                        <span class="city">★ 4.96(185)</span><br />
+                        <span class="distance">내 삶에서 잃어버린 기억을 향기로 찾아보는 나만의 향수만들기</span>
+                        <span>₩72,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img4"></div>
+                    <div>
+                        <span class="city">★ 5.0(7)</span><br />
+                        <span class="distance">바느질쟁이와 함께하는 업사이클링 봉제클래스</span><br />
+                        <span>₩40,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img2"></div>
+                    <div>
+                        <span class="city">★ 5.0(28)</span><br />
+                        <span class="distance">티 바bar에서 네 가지 코스로 즐기는 차와 디저트</span><br />
+                        <span>₩20,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img6"></div>
+                    <div>
+                        <span class="city">★ 4.98(417)</span><br />
+                        <span class="distance">궁궐에서의 사진 모델 투어</span><br />
+                        <span>₩100,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img9"></div>
+                    <div>
+                        <span class="city">★ 4.98(345)</span><br />
+                        <span class="distance">요트 영화처럼 즐기기</span><br />
+                        <span>₩30,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img10"></div>
+                    <div>
+                        <span class="city">★ 4.95(85)</span><br />
+                        <span class="distance">앙금찰떡 만들기</span><br />
+                        <span>₩65,000~/인</span>
+                    </div>
+                </div>
+            </div>
+            <span>
+                <div class="subtitle">독특한 개성으로 높은 평점을 받은 체험</div>
+            </span>
+            <div class="tabs">
+                <div class="tab1">
+                    <div class="img12"></div>
+                    <div>
+                        <span class="city">★ 4.99(181))</span><br />
+                        <span class="distance">그녀와 함께 하는 수제도장 만들기</span><br />
+                        <span>₩60,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img8"></div>
+                    <div>
+                        <span class="city">★ 4.96</span><br />
+                        <span class="distance">뮤지션이 들려주는 홍대와 음악 이야기</span><br />
+                        <span>₩70,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img15"></div>
+                    <div>
+                        <span class="city">★ 4.94(71))</span><br />
+                        <span class="distance">천년의 음악을 이어가는 사람들 '지지대악'</span><br />
+                        <span>₩100,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img13"></div>
+                    <div>
+                        <span class="city">★ 5.0(36)</span><br />
+                        <span class="distance">E-Bike 서울투어</span><br />
+                        <span>₩80,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img14"></div>
+                    <div>
+                        <span class="city">★ 4.98(46)</span><br />
+                        <span class="distance">서울의 추억을 사진에 담아보세요❤️</span><br />
+                        <span>₩150,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img11"></div>
+                    <div>
+                        <span class="city">★ 4.92(50)</span><br />
+                        <span class="distance">한국 전통 서예 배우기</span><br />
+                        <span>₩80,000~/인</span>
+                    </div>
+                </div>
+            </div>
+            <span>
+                <div class="subtitle">모든 체험</div>
+            </span>
+            <div class="taball">
+                <div class="tab1">
+                    <div class="img3"></div>
+                    <div>
+                        <span class="city">★ 4.99(189))</span><br />
+                        <span class="distance">나만의 자개 작품 만들기</span><br />
+                        <span>₩60,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img5"></div>
+                    <div>
+                        <span class="city">★ 5.0(31)</span><br />
+                        <span class="distance">내손으로 만드는 세상에 단 하나뿐인 은액세서리만들기</span><br />
+                        <span>₩50,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img1"></div>
+                    <div>
+                        <span class="city">★ 5.0(7))</span><br />
+                        <span class="distance">나만의 도자 피규어잔 만들기</span><br />
+                        <span>₩60,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img12"></div>
+                    <div>
+                        <span class="city">★ 4.99(181)</span><br />
+                        <span class="distance">그녀와 함께 하는 수제도장 만들기</span><br />
+                        <span>₩60,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img6"></div>
+                    <div>
+                        <span class="city">★ 4.98(417)</span><br />
+                        <span class="distance">궁궐에서의 사진 모델 투어</span><br />
+                        <span>₩100,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img9"></div>
+                    <div>
+                        <span class="city">★ 4.98(345)</span><br />
+                        <span class="distance">요트 영화처럼 즐기기</span><br />
+                        <span>₩30,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img10"></div>
+                    <div>
+                        <span class="city">★ 4.95(85)</span><br />
+                        <span class="distance">앙금찰떡 만들기</span><br />
+                        <span>₩65,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img8"></div>
+                    <div>
+                        <span class="city">★ 4.96</span><br />
+                        <span class="distance">뮤지션이 들려주는 홍대와 음악 이야기</span><br />
+                        <span>₩70,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img15"></div>
+                    <div>
+                        <span class="city">★ 4.94(71))</span><br />
+                        <span class="distance">천년의 음악을 이어가는 사람들 '지지대악'</span><br />
+                        <span>₩100,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img13"></div>
+                    <div>
+                        <span class="city">★ 5.0(36)</span><br />
+                        <span class="distance">E-Bike 서울투어</span><br />
+                        <span>₩80,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img7"></div>
+                    <div>
+                        <span class="city">★ 4.96(185)</span><br />
+                        <span class="distance">내 삶에서 잃어버린 기억을 향기로 찾아보는 나만의 향수만들기</span><br />
+                        <span>₩72,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img4"></div>
+                    <div>
+                        <span class="city">★ 5.0(7)</span><br />
+                        <span class="distance">바느질쟁이와 함께하는 업사이클링 봉제클래스</span><br />
+                        <span>₩40,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img2"></div>
+                    <div>
+                        <span class="city">★ 5.0(28)</span><br />
+                        <span class="distance">티 바bar에서 네 가지 코스로 즐기는 차와 디저트</span><br />
+                        <span>₩20,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img14"></div>
+                    <div>
+                        <span class="city">★ 4.98(46)</span><br />
+                        <span class="distance">서울의 추억을 사진에 담아보세요❤️</span><br />
+                        <span>₩150,000~/인</span>
+                    </div>
+                </div>
+                <div class="tab1">
+                    <div class="img11"></div>
+                    <div>
+                        <span class="city">★ 4.92(50)</span><br />
+                        <span class="distance">한국 전통 서예 배우기</span><br />
+                        <span>₩80,000~/인</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="more">더 보기</button>
+    </section>
+    <footer>
+        <div class="tabs">
+            <div>
+                <h3>에어비앤비 지원</h3>
+                <ul>
+                    <li>도움말 센터</li>
+                    <li>안전 정보</li>
+                    <li>예약 취소 옵션</li>
+                    <li>에어비앤비의 코로나19 대응 방안</li>
+                    <li>장애인 지원</li>
+                    <li>이웃 민원 신고</li>
+                </ul>
+            </div>
+            <div>
+                <h3>커뮤니티</h3>
+                <ul>
+                    <li>Airbnb.org: 재난 구호 숙소</li>
+                    <li>아프간 난민 지원</li>
+                    <li>다양성과 소속감 증진</li>
+                    <li>차별 철폐를 위한 노력</li>
+                </ul>
+            </div>
+            <div>
+                <h3>호스팅</h3>
+                <ul>
+                    <li>호스팅 시작하기</li>
+                    <li>에어커버: 호스트를 위한 보호 프로그램</li>
+                    <li>호스팅 자료 둘러보기</li>
+                    <li>커뮤니티 포럼 방문하기</li>
+                    <li>책임감 있는 호스팅</li>
+                    <li>책임감 있는 호스팅</li>
+                </ul>
+            </div>
+            <div>
+                <h3>소개</h3>
+                <ul>
+                    <li>뉴스룸</li>
+                    <li>새로운 기능에 대해 알아보기</li>
+                    <li>에어비앤비 공동창업자의 메세지</li>
+                    <li>채용정보</li>
+                    <li>투자자 정보</li>
+                    <li>에어비앤비 Luxe</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <span class="left">© 2022 Airbnb,Inc. · 개인정보 처리방침 · 이용양관 · 사이트맵 · 한국의 변경된 환불 정책 · 회사 세부정보</span>
+            <span class="right">
+                🌐
+                <span class="underline">한국어 (KR)</span>
+                ₩
+                <span class="underline">KRW</span>
+                <span class="fa fa-facebook"></span>
+                <span class="fa fa-twitter"></span>
+                <span class="fa fa-instagram"></span>
+            </span>
+        </div>
+    </footer>
+
+    <script src="js.js"></script>
+    <script src="https://kit.fontawesome.com/89e28daf2a.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
