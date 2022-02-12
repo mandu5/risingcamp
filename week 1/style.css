@@ -48,7 +48,7 @@ header .input {
   margin-left: 230px;
 }
 header .input i {
-  margin-right: -50px;
+  margin-right: -20px;
   background: #ff385c;
   color: #fff;
   font-size: 18px;
@@ -168,7 +168,48 @@ header ul li a {
   letter-spacing: 2px;
   font-weight: 500px;
 }
-
+header .responsive {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+header.sticky .responsive input {
+  visibility: hidden;
+}
+@media (max-width: 991px) {
+  header .input,
+  header .top {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  header .responsive label {
+    visibility: visible;
+    position: fixed;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 100px;
+    font-size: 15px;
+    padding: 20px 20px 20px 0px;
+    width: 65%;
+    margin-left: 10%;
+    cursor: pointer;
+  }
+  header .responsive label span {
+    visibility: visible;
+  }
+  header .responsive label span {
+    color: #000;
+  }
+}
+@media (max-width: 1073px) {
+  header.sticky, header.sticky input, header.sticky i {
+    visibility: hidden;
+  }
+}
 .banner {
   color: #fff;
   margin-left: 5%;
@@ -294,11 +335,11 @@ section .experience .tab2 {
 }
 section .image1 {
   background: url(img/8.jpg);
-  background-size: 100%;
+  background-size: cover;
 }
 section .image2 {
   background: url(img/1.jpg);
-  background-size: 100%;
+  background-size: cover;
 }
 section .image1,
 section .image2 {
@@ -327,7 +368,7 @@ section .experience .button:hover {
 }
 section .image3 {
   background: url(img/7.jpg);
-  background-size: 100%;
+  background-size: cover;
   border-radius: 15px;
   height: 630px;
   margin-right: 10px;
