@@ -206,7 +206,10 @@ header.sticky .responsive input {
   }
 }
 @media (max-width: 1073px) {
-  header.sticky, header.sticky input, header.sticky i {
+  header.sticky,
+  header.sticky input,
+  header.sticky i,
+  header.sticky .selections2 {
     visibility: hidden;
   }
 }
