@@ -1,18 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { a } from "../img";
+import { a } from "../../img";
 
-const Banners = styled.div`
+const Black = styled.div`
+  background: #000;
   color: #fff;
-  margin: 200px 5% 100px 5%;
+  background: #000;
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 0px 5% 100px 5%;
+  padding: 200px 0px 0px 0px;
   border-radius: 10px;
   width: 90%;
-  height: 650px;
+`;
+const Banners = styled.div`
   background: url(${a});
+  height: 650px;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   .title {
@@ -41,18 +46,20 @@ const Banners = styled.div`
 
 function Banner() {
   return (
-    <Banners>
-      <div>
-        <div className="title">
-          에어비앤비가
-          <br /> 여행지를 찾아드릴게요!
+    <Black>
+      <Banners>
+        <div>
+          <div className="title">
+            에어비앤비가
+            <br /> 여행지를 찾아드릴게요!
+          </div>
+          <br />
+          <Link to="/search" className="button">
+            <span>유연한 검색</span>
+          </Link>
         </div>
-        <br />
-        <Link to="/search" className="button">
-          <span>유연한 검색</span>
-        </Link>
-      </div>
-    </Banners>
+      </Banners>
+    </Black>
   );
 }
 

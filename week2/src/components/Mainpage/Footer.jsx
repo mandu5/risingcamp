@@ -1,8 +1,8 @@
 import React from "react";
 import { ImInstagram, ImFacebook } from "react-icons/im";
 import { AiOutlineTwitter, AiOutlineGlobal } from "react-icons/ai";
-import naverBlog from "../img/naverblog.jpg";
-import naverPost from "../img/naverpost.jpg";
+import naverBlog from "../../img/naverblog.jpg";
+import naverPost from "../../img/naverpost.jpg";
 import styled from "styled-components";
 
 const Footers = styled.div`

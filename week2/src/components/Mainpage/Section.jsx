@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { b, c, d } from "../img";
+import { b, c, d, e, f, g, h } from "../../img";
 
 const Sections = styled.section`
   background-color: #fff;
@@ -30,6 +30,49 @@ const Sections = styled.section`
       padding: 20px;
       font-size: 20px;
       color: #fff;
+    }
+    .tab1,
+    .tab2,
+    .tab3,
+    .tab4 {
+      margin: 10px;
+      border-radius: 15px;
+    }
+    .tab1 {
+      background: #de3151;
+    }
+    .tab2 {
+      background: #d93b30;
+    }
+    .tab3 {
+      background: #bc1a6e;
+    }
+    .tab4 {
+      background: #cc2d4a;
+    }
+    .img1,
+    .img2,
+    .img3,
+    .img4 {
+      height: 50%;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+    .img1 {
+      background: url(${e});
+      background-size: cover;
+    }
+    .img2 {
+      background: url(${f});
+      background-size: cover;
+    }
+    .img3 {
+      background: url(${g});
+      background-size: cover;
+    }
+    .img4 {
+      background: url(${h});
+      background-size: cover;
     }
   }
   .experience {
@@ -159,7 +202,9 @@ function Section() {
                 <br /> 이색적인 즐길 거리
                 <br />
               </span>
-              <Link to="/experience" className="button">체험</Link>
+              <Link to="/experience" className="button">
+                체험
+              </Link>
             </div>
           </div>
           <div className="tab2">

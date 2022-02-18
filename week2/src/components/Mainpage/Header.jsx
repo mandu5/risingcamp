@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaUserCircle, FaAirbnb } from "react-icons/fa";
 import { ImSearch } from "react-icons/im";
 import { AiOutlineGlobal } from "react-icons/ai";
+import Calendar from "react-calendar";
 import styled from "styled-components";
 
 const Action = styled.div`
@@ -37,6 +38,7 @@ const Action = styled.div`
     border-radius: 15px;
     visibility: hidden;
     opacity: 0;
+    z-index: 100000;
     &.active {
       top: 50px;
       visibility: visible;
@@ -65,14 +67,18 @@ const Head = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 0px 70px;
-  margin-top: 30px;
+  padding: 32px 70px 2px 70px;
   z-index: 100;
   .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    @media (max-width: 991px) {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
   }
   .input {
     position: relative;
@@ -84,12 +90,11 @@ const Head = styled.header`
     color: #000;
     border-radius: 1000px;
     font-size: 13px;
-    padding: 10px 0px 10px 0px;
     margin: 30px 0 30px -425px;
     width: 850px;
     left: 50%;
     i {
-      margin-right: -35px;
+      margin-right: -25px;
       background: #ff385c;
       color: #fff;
       font-size: 18px;
@@ -104,10 +109,29 @@ const Head = styled.header`
     }
     .border {
       border-left: 1px solid #dfdddd;
-      padding-left: 20px;
+      padding: 13px 10px 13px 10px;
+      &:hover {
+        border-radius: 1000px;
+        background: #ebebeb;
+      }
     }
     .subs {
       color: #717171;
+    }
+    .hide,
+    .show {
+      position: absolute;
+    }
+    .hide {
+      visibility: hidden;
+    }
+    .show {
+      visibility: visible;
+    }
+    @media (max-width: 991px) {
+      visibility: hidden;
+      width: 0;
+      height: 0;
     }
   }
   .logo {
@@ -145,6 +169,34 @@ const Head = styled.header`
     visibility: hidden;
     width: 0;
     height: 0;
+    .img {
+      color: red;
+      margin-right: 10px;
+    }
+    label {
+      @media (max-width: 991px) {
+        /* 중앙정렬 */
+        visibility: visible;
+        position: fixed;
+        width: 300px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 100px;
+        font-size: 15px;
+        padding: 20px 20px 20px 0px;
+        width: 65%;
+        margin-left: 10%;
+        cursor: pointer;
+      }
+      span {
+        @media (max-width: 991px) {
+          visibility: visible;
+          color: #000;
+        }
+      }
+    }
   }
   ul {
     position: relative;
@@ -158,14 +210,81 @@ const Head = styled.header`
       text-decoration: none;
     }
   }
+  &.sticky {
+    padding: 0px 70px;
+    margin-top: -60px;
+    background-color: #fff;
+    color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    @media (max-width: 1073px) {
+      visibility: hidden;
+    }
+    ul {
+      li {
+        color: #000;
+      }
+    }
+    .top {
+      margin-bottom: -110px;
+    }
+    .input {
+      visibility: hidden;
+      height: 0px;
+      width: 0;
+    }
+    .logo {
+      color: #ff385c;
+    }
+    .selections {
+      visibility: hidden;
+      width: 0;
+    }
+    .selections2 {
+      visibility: visible;
+      color: #ffffff;
+      width: 300px;
+      margin-left: -380px;
+      margin-top: 10px;
+      padding: 4px 5px 38px 20px;
+      border-radius: 100px;
+      border: 1px solid #e6e3e3;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+      }
+      input {
+        border: none;
+        left: 0;
+        top: 0;
+        width: 80%;
+        height: 30px;
+        margin-top: 2px;
+      }
+      i {
+        background: #ff385c;
+        font-size: 15px;
+        padding: 8px 10px;
+        border-radius: 1000px;
+        margin-left: 0px;
+        float: right;
+      }
+    }
+  }
 `;
 
 window.addEventListener("scroll", function () {
   let header = document.querySelector("header");
-  header.classList.toggle("sticky", window.scrollY > 0);
+  header.classList.toggle("sticky", window.scrollY > 50);
 });
 
 function Header() {
+  const [calendar, setCalendar] = useState("hide");
+  const [value, onChange] = useState("날짜 입력");
+  const inputRef = useRef(null);
+  const selectDate = () => {
+    setCalendar(calendar === "hide" ? "show" : "hide");
+  };
   const menuToggle = () => {
     const toggleMenu = document.querySelector(".menu");
     toggleMenu.classList.toggle("active");
@@ -228,7 +347,7 @@ function Header() {
         </div>
       </div>
       <div className="input">
-        <div>
+        <div className="border">
           <label>
             <div>위치</div>
             <input placeholder="어디로 여행가세요?"></input>
@@ -238,9 +357,12 @@ function Header() {
           <div>체크인</div>
           <div className="subs">날짜 입력</div>
         </div>
-        <div className="border">
+        <div onClick={selectDate} className="border">
           <div>체크아웃</div>
-          <div className="subs">날짜 입력</div>
+          <div>
+            <input type="text" value={value} ref={inputRef} disabled />
+          </div>
+          <Calendar onChange={onChange} className={calendar} />
         </div>
         <div className="border">
           <div>인원</div>
@@ -253,7 +375,7 @@ function Header() {
       <div className="responsive">
         <label>
           <span>
-            <ImSearch />
+            <ImSearch className="img" />
           </span>
           <span>어디로 여행가세요?</span>
         </label>
