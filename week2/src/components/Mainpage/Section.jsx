@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { b, c, d, e, f, g, h } from "../../img";
+import { b, c, d, e, f, g, h } from "../../assets/img";
 
 const Sections = styled.section`
   background-color: #fff;

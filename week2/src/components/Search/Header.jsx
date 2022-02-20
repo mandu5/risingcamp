@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { FaAirbnb, FaUserCircle } from "react-icons/fa";
+import { FaAirbnb, FaAngleDown } from "react-icons/fa";
 import { AiOutlineGlobal } from "react-icons/ai";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { BiTransfer } from "react-icons/bi";
+import Action from "../Action";
+import Dropdown from "./Dropdown";
 
 const Head = styled.header`
   background: #fff;
@@ -12,8 +14,6 @@ const Head = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  transition: 0.2s;
-  margin-top: 30px;
   z-index: 100;
   .top {
     padding: 0px 70px;
@@ -31,16 +31,19 @@ const Head = styled.header`
     background-color: #fff;
     color: #000;
     font-size: 13px;
-    margin-top: 30px;
-    width: 95%;
-    margin-left: 3%;
+    width: 90%;
+    margin: 30px 3% 0px 5%;
     span {
       color: #000;
       font-size: 13px;
       border: 1px solid #d8d8d8;
-      padding: 12px 30px 12px 30px;
+      padding: 12px 20px 12px 20px;
       border-radius: 100px;
       float: right;
+      &:hover {
+        cursor: pointer;
+        border: 1px solid #000;
+      }
     }
     .borders {
       border-bottom: 1px solid #000;
@@ -48,9 +51,8 @@ const Head = styled.header`
     }
     .border {
       cursor: pointer;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      border-radius: 15px;
+      padding: 10px 10px 10px 10px;
+      border-radius: 5px;
       &:hover {
         background-color: rgb(238, 236, 236);
       }
@@ -119,16 +121,17 @@ const Head = styled.header`
     }
   }
   .logo {
-    font-weight: 400;
-    font-size: 30px;
-    color: #fff;
+    color: #ff385c;
     text-decoration: none;
     letter-spacing: 2px;
-    color: #ff385c;
-    cursor: pointer;
+    .image {
+      margin-bottom: -10px;
+      font-size: 35px;
+    }
     span {
-      font-weight: 500;
-      font-size: 25px;
+      font-weight: 700;
+      font-size: 20px;
+      margin-left: 5px;
     }
   }
   .selections {
@@ -169,65 +172,11 @@ const Head = styled.header`
     }
   }
 `;
-const Action = styled.div`
-  border: 1px solid rgb(223, 223, 223);
-  background-color: #fff;
-  color: #222222;
-  border-radius: 100px;
-  font-size: 18px;
-  padding: 3px 13px 3px 13px;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  }
-  .profile {
-    color: #717171;
-    .fa-bars {
-      margin: 0 0 5px 0;
-    }
-    .fa-circle-user {
-      margin: 5px -5px 0 10px;
-      font-size: 30px;
-    }
-  }
-  .menu {
-    position: absolute;
-    top: 120px;
-    right: -10px;
-    background: #fff;
-    width: 250px;
-    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 100000;
-    &.active {
-      top: 50px;
-      visibility: visible;
-      opacity: 1;
-    }
-    h3 {
-      width: 100%;
-      font-size: 13px;
-      padding: 15px 0;
-      font-weight: 500;
-      color: #555;
-      line-height: 1.2em;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding: 10px;
-      &:hover {
-        background-color: rgb(211, 210, 210);
-      }
-    }
-  }
-`;
 
-function Header() {
-  const menuToggle = () => {
-    const toggleMenu = document.querySelector(".menu");
-    toggleMenu.classList.toggle("active");
+function Header({ toggle, filter }) {
+  const [dropdown, setDropdown] = useState("dropdown");
+  const dropToggle = () => {
+    setDropdown(dropdown === "dropdown" ? "dropdown active" : "dropdown");
   };
   return (
     <Head>
@@ -248,34 +197,7 @@ function Header() {
               <AiOutlineGlobal />
             </li>
             <li>
-              <Action onClick={menuToggle}>
-                <div className="profile">
-                  <GiHamburgerMenu className="fa-bars" />
-                  <FaUserCircle className="fa-circle-user" />
-                </div>
-                <div className="menu">
-                  <h3>
-                    회원가입
-                    <br />
-                  </h3>
-                  <h3>
-                    로그인
-                    <br />
-                  </h3>
-                  <h3>
-                    숙소 호스트 되기
-                    <br />
-                  </h3>
-                  <h3>
-                    체험 호스팅하기
-                    <br />
-                  </h3>
-                  <h3>
-                    도움말
-                    <br />
-                  </h3>
-                </div>
-              </Action>
+              <Action toggle={toggle} />
             </li>
           </ul>
         </div>
@@ -321,16 +243,17 @@ function Header() {
           <div>성</div>
         </div>
         <div className="border">
-          <div>더 보기</div>
+          <Dropdown dropToggle={dropToggle} dropdown={dropdown} />
         </div>
         <span>
-          언제든 <div className="fa-solid fa-angle-down"></div>
+          언제든 <FaAngleDown />
         </span>
         <span>
-          인원 <div className="fa-solid fa-angle-down"></div>
+          인원 <FaAngleDown />
         </span>
-        <span>
-          <div className="fa-solid fa-filter"></div> 필터
+        <span onClick={filter}>
+          <BiTransfer />
+          필터
         </span>
       </div>
     </Head>

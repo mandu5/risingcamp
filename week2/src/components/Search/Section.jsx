@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P } from "../../img";
+import { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P } from "../../assets/img";
 import { data } from "./data";
 
 const Sections = styled.section`

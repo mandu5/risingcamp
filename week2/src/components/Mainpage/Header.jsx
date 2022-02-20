@@ -1,65 +1,12 @@
 import React, { useRef, useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { FaUserCircle, FaAirbnb } from "react-icons/fa";
+import { FaAirbnb } from "react-icons/fa";
 import { ImSearch } from "react-icons/im";
 import { AiOutlineGlobal } from "react-icons/ai";
 import Calendar from "react-calendar";
 import styled from "styled-components";
+import Action from "../Action";
+import "react-calendar/dist/Calendar.css";
 
-const Action = styled.div`
-  border: 1px solid rgb(223, 223, 223);
-  background-color: #fff;
-  color: #222222;
-  border-radius: 100px;
-  font-size: 18px;
-  padding: 3px 13px 3px 13px;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  }
-  .profile {
-    color: #717171;
-    .fa-bars {
-      margin: 0 0 5px 0;
-    }
-    .fa-circle-user {
-      margin: 5px -5px 0 10px;
-      font-size: 30px;
-    }
-  }
-  .menu {
-    position: absolute;
-    top: 120px;
-    right: -10px;
-    background: #fff;
-    width: 250px;
-    box-sizing: 0 5px 25px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    visibility: hidden;
-    opacity: 0;
-    z-index: 100000;
-    &.active {
-      top: 50px;
-      visibility: visible;
-      opacity: 1;
-    }
-    h3 {
-      width: 100%;
-      font-size: 13px;
-      padding: 15px 0;
-      font-weight: 500;
-      color: #555;
-      line-height: 1.2em;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding: 10px;
-      &:hover {
-        background-color: rgb(211, 210, 210);
-      }
-    }
-  }
-`;
 const Head = styled.header`
   background: #000;
   color: #fff;
@@ -109,10 +56,28 @@ const Head = styled.header`
     }
     .border {
       border-left: 1px solid #dfdddd;
+      padding: 13px 10px 13px 25px;
+    }
+    .border1 {
       padding: 13px 10px 13px 10px;
+    }
+    .border,
+    .border1 {
       &:hover {
         border-radius: 1000px;
         background: #ebebeb;
+      }
+      .bold {
+        font-weight: 600;
+      }
+      .value {
+        width: 130px;
+        font-size: 10px;
+      }
+      #calendar {
+        @media (max-width: 991px) {
+          visibility: hidden;
+        }
       }
     }
     .subs {
@@ -126,7 +91,13 @@ const Head = styled.header`
       visibility: hidden;
     }
     .show {
+      left: 30px;
+      top: 70px;
+      border-radius: 25px;
       visibility: visible;
+      display: flex;
+      background-color: #fff;
+      padding: 50px 50px 50px 50px;
     }
     @media (max-width: 991px) {
       visibility: hidden;
@@ -216,7 +187,7 @@ const Head = styled.header`
     background-color: #fff;
     color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-    @media (max-width: 1073px) {
+    @media (max-width: 991px) {
       visibility: hidden;
     }
     ul {
@@ -231,6 +202,10 @@ const Head = styled.header`
       visibility: hidden;
       height: 0px;
       width: 0;
+    }
+    .hide,
+    .show {
+      visibility: hidden;
     }
     .logo {
       color: #ff385c;
@@ -278,16 +253,12 @@ window.addEventListener("scroll", function () {
   header.classList.toggle("sticky", window.scrollY > 50);
 });
 
-function Header() {
+function Header({ toggle }) {
   const [calendar, setCalendar] = useState("hide");
   const [value, onChange] = useState("날짜 입력");
   const inputRef = useRef(null);
   const selectDate = () => {
     setCalendar(calendar === "hide" ? "show" : "hide");
-  };
-  const menuToggle = () => {
-    const toggleMenu = document.querySelector(".menu");
-    toggleMenu.classList.toggle("active");
   };
   return (
     <Head>
@@ -314,58 +285,38 @@ function Header() {
               <AiOutlineGlobal />
             </li>
             <li>
-              <Action onClick={menuToggle}>
-                <div className="profile">
-                  <GiHamburgerMenu className="fa-bars" />
-                  <FaUserCircle className="fa-circle-user" />
-                </div>
-                <div className="menu">
-                  <h3>
-                    회원가입
-                    <br />
-                  </h3>
-                  <h3>
-                    로그인
-                    <br />
-                  </h3>
-                  <h3>
-                    숙소 호스트 되기
-                    <br />
-                  </h3>
-                  <h3>
-                    체험 호스팅하기
-                    <br />
-                  </h3>
-                  <h3>
-                    도움말
-                    <br />
-                  </h3>
-                </div>
-              </Action>
+              <Action toggle={toggle} />
             </li>
           </ul>
         </div>
       </div>
       <div className="input">
-        <div className="border">
+        <div className="border1">
           <label>
-            <div>위치</div>
-            <input placeholder="어디로 여행가세요?"></input>
+            <div className="bold">위치</div>
+            <input placeholder="어디로 여행가세요?" disabled></input>
           </label>
         </div>
-        <div className="border">
-          <div>체크인</div>
+        <div className="border" onClick={selectDate}>
+          <div className="bold">체크인</div>
           <div className="subs">날짜 입력</div>
         </div>
-        <div onClick={selectDate} className="border">
-          <div>체크아웃</div>
-          <div>
-            <input type="text" value={value} ref={inputRef} disabled />
+        <div className="border" onClick={selectDate}>
+          <div className="bold">체크아웃</div>
+          <input
+            className="value"
+            type="text"
+            value={value}
+            ref={inputRef}
+            disabled
+          />
+          <div id="calendar" className={calendar}>
+            <Calendar onChange={onChange} />
+            <Calendar onChange={onChange} />
           </div>
-          <Calendar onChange={onChange} className={calendar} />
         </div>
         <div className="border">
-          <div>인원</div>
+          <div className="bold">인원</div>
           <div className="subs">게스트 추가</div>
         </div>
         <i>

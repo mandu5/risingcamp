@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { a } from "../../img";
+import { a } from "../../assets/img";
 
 const Black = styled.div`
   background: #000;
