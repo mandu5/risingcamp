@@ -27,7 +27,6 @@ const Sections = styled.section`
   background-color: #fff;
   color: #000;
   padding-bottom: 20px;
-  margin-top: 100px;
   .input {
     display: flex;
     justify-content: center;
@@ -59,9 +58,14 @@ const Sections = styled.section`
   .border1 {
     border-bottom: 1px solid rgb(222, 218, 218);
     margin-bottom: 59px;
+    @media (max-width: 1200px) {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
   }
   .margin {
-    margin: 50px 5% 0 5%;
+    margin: 50px 20px 90px 20px;
     .title {
       font-weight: 600;
       font-size: 35px;
@@ -78,15 +82,27 @@ const Sections = styled.section`
   }
   .videos {
     display: flex;
-    justify-content: space-between;
-    margin: 60px;
+    justify-content: space-evenly;
+    margin-right: 80px;
     .title {
-      margin: 120px 280px 0 80px;
+      margin: 120px 0 0 80px;
       font-size: 50px;
       font-weight: 700;
+      @media (max-width: 991px) {
+        font-size: 30px;
+      }
+      @media (max-width: 717px) {
+        font-size: 15px;
+      }
     }
     .video {
       border-radius: 20px;
+      @media (max-width: 717px) {
+        width: 200px;
+        height: 300px;
+        border-radius: 20px;
+        margin-bottom: 15px;
+      }
     }
   }
   .underline {
@@ -98,10 +114,28 @@ const Sections = styled.section`
   .tabs {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 615px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 477px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   .taball {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 615px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 477px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   .tab1 {
     margin: 10px;
@@ -201,14 +235,14 @@ const Sections = styled.section`
     }
   }
   .more {
-    position: relative;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: none;
     font-size: 15px;
-    left: 48%;
-    top: 50%;
-    padding: 15px 25px;
+    padding: 15px 25px 15px 25px;
     border-radius: 10px;
-    margin: 50px 0 30px 0;
+    margin: 50px 0 0 0;
     background-color: rgb(70, 69, 69);
     color: #fff;
     cursor: pointer;
@@ -340,8 +374,8 @@ function Section({ filter }) {
             </div>
           ))}
         </div>
+        <button className="more">더 보기</button>
       </div>
-      <button className="more">더 보기</button>
     </Sections>
   );
 }

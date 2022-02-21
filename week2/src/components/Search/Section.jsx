@@ -1,6 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P } from "../../assets/img";
+import {
+  A,
+  B,
+  C,
+  D,
+  E,
+  F,
+  G,
+  H,
+  I,
+  J,
+  K,
+  L,
+  M,
+  N,
+  O,
+  P,
+} from "../../assets/img";
 import { data } from "./data";
 
 const Sections = styled.section`
@@ -9,6 +26,9 @@ const Sections = styled.section`
   padding-top: 30px;
   padding-bottom: 20px;
   margin-top: 150px;
+  @media (max-width: 991px) {
+    margin-top: 70px;
+  }
   .margin {
     margin-right: 5%;
     margin-left: 5%;
@@ -17,6 +37,12 @@ const Sections = styled.section`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 380px;
+    @media (max-width: 991px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 381px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
     .city {
       font-size: 15px;
       font-weight: 600;

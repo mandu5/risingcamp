@@ -54,7 +54,7 @@ const Footers = styled.div`
     .fa fa-twitter,
     .fa fa-instagram {
       text-decoration: underline;
-      margin-right: 50px;
+      margin-right: 10px;
     }
     .icon {
       margin: 0 10px 0 10px;

@@ -10,6 +10,9 @@ const Footers = styled.div`
   color: #000;
   margin-top: 1200px;
   padding-top: 30px;
+  @media (max-width: 991px) {
+    visibility: hidden;
+  }
   .tabs {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

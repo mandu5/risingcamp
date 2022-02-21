@@ -7,29 +7,54 @@ const Sections = styled.section`
   background-color: #fff;
   color: #000;
   padding: 30px 0 20px 0;
-  .margin {
-    margin: 0 20px 0 20px;
-  }
   .title {
     display: flex;
     font-size: 48px;
     margin: 60px 0 30px 15px;
     font-weight: 600;
+    @media (max-width: 991px) {
+      font-size: 36px;
+    }
+    @media (max-width: 481px) {
+      font-size: 24px;
+    }
   }
   .tabs {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 400px;
+    @media (max-width: 680px) {
+      grid-template-columns: repeat(2, 1fr);
+      height: 800px;
+    }
+    @media (max-width: 340px) {
+      grid-template-columns: repeat(1, 1fr);
+      height: 1600px;
+    }
+    @media (max-width: 443px) {
+    }
     .city {
-      padding: 20px;
+      padding-left: 20px;
       font-size: 35px;
       font-weight: 600;
       color: #fff;
+      @media (max-width: 991px) {
+        font-size: 25px;
+      }
+      @media (max-width: 443px) {
+        font-size: 20px;
+      }
     }
     .distance {
       padding: 20px;
       font-size: 20px;
       color: #fff;
+      @media (max-width: 991px) {
+        font-size: 15px;
+      }
+      @media (max-width: 443px) {
+        font-size: 10px;
+      }
     }
     .tab1,
     .tab2,
@@ -102,6 +127,10 @@ const Sections = styled.section`
       &:hover {
         background-color: rgb(211, 210, 210);
       }
+      @media (max-width: 436px) {
+        font-size: 14px;
+        padding: 10px 25px 10px 25px;
+      }
     }
   }
   .image1 {
@@ -118,6 +147,9 @@ const Sections = styled.section`
     height: 100%;
     width: 100%;
     padding: 50px;
+    @media (max-width: 991px) {
+      height: 80%;
+    }
   }
   .image3 {
     background: url(${d});
@@ -131,6 +163,15 @@ const Sections = styled.section`
       font-size: 80px;
       font-weight: 800;
       margin-left: 60px;
+      @media (max-width: 991px) {
+        font-size: 60px;
+      }
+      @media (max-width: 443px) {
+        font-size: 40px;
+      }
+      @media (max-width: 231px) {
+        position: fixed;
+      }
     }
     .button {
       border: none;
@@ -144,8 +185,10 @@ const Sections = styled.section`
       &:hover {
         background-color: rgb(211, 210, 210);
       }
-      @media (max-width: 991px) {
-        visibility: hidden;
+      @media (max-width: 443px) {
+        font-size: 10px;
+        padding: 7px 16px 7px 16px;
+        position: sticky;
       }
     }
   }
@@ -162,7 +205,7 @@ function Section() {
           <div className="tab1">
             <div className="img1"></div>
             <div>
-              <span className="city">제주도(Jeju)</span>
+              <span className="city">제주도</span>
               <br />
               <span className="distance">455km 거리</span>
             </div>

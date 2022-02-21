@@ -16,13 +16,58 @@ const Head = styled.header`
   width: 100%;
   z-index: 100;
   .top {
-    padding: 0px 70px;
-    padding-bottom: 10px;
+    padding: 10px 70px 10px 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     border-bottom: 1px solid rgb(224, 221, 221);
+    @media (max-width: 381px) {
+      padding: 10px;
+    }
+    .host {
+      color: #000;
+      ul {
+        li {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+      @media (max-width: 991px) {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+      }
+    }
+    .logo {
+      color: #ff385c;
+      text-decoration: none;
+      letter-spacing: 2px;
+      .image {
+        margin-bottom: -10px;
+        font-size: 35px;
+      }
+      span {
+        font-weight: 700;
+        font-size: 20px;
+        margin-left: 5px;
+      }
+    }
+    .selections {
+      visibility: hidden;
+    }
+    .selections2 {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
+    .selection {
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        text-underline-position: under;
+      }
+    }
   }
   .input {
     display: flex;
@@ -33,6 +78,11 @@ const Head = styled.header`
     font-size: 13px;
     width: 90%;
     margin: 30px 3% 0px 5%;
+    @media (max-width: 991px) {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
     span {
       color: #000;
       font-size: 13px;
@@ -62,12 +112,6 @@ const Head = styled.header`
     }
     input {
       border: none;
-    }
-  }
-  .host {
-    color: #000;
-    li {
-      margin: 10px;
     }
   }
   &.sticky {
@@ -118,39 +162,6 @@ const Head = styled.header`
     .host {
       visibility: hidden;
       color: #000;
-    }
-  }
-  .logo {
-    color: #ff385c;
-    text-decoration: none;
-    letter-spacing: 2px;
-    .image {
-      margin-bottom: -10px;
-      font-size: 35px;
-    }
-    span {
-      font-weight: 700;
-      font-size: 20px;
-      margin-left: 5px;
-    }
-  }
-  .selections {
-    margin-left: 270px;
-    visibility: hidden;
-  }
-  .selections2 {
-    visibility: hidden;
-    width: 0;
-    height: 0;
-  }
-  .selection {
-    margin-top: 5px;
-    margin-left: 15px;
-    margin-right: 15px;
-    &:hover {
-      cursor: pointer;
-      text-decoration: underline;
-      text-underline-position: under;
     }
   }
   ul {

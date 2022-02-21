@@ -6,14 +6,17 @@ import styled from "styled-components";
 import Action from "../Action";
 
 const Head = styled.header`
+  position: fixed;
   background: #fff;
   color: #000;
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 15px 80px 0 80px;
+  padding: 15px 40px 0 40px;
   z-index: 100;
+  @media (max-width: 720px) {
+    font-size: 10px;
+  }
   .top {
     display: flex;
     justify-content: space-evenly;
@@ -32,6 +35,9 @@ const Head = styled.header`
       font-weight: 700;
       font-size: 20px;
       margin-left: 5px;
+      @media (max-width: 690px) {
+        font-size: 15px;
+      }
     }
   }
   .selections {
@@ -39,20 +45,28 @@ const Head = styled.header`
   }
   .selections2 {
     color: #ffffff;
-    width: 250px;
-    margin: 10px 150px 0 0;
-    padding: 5px 0px 5px 20px;
+    margin: 10px 0px 0 -170px;
+    padding: 5px 10px 5px 20px;
     border-radius: 100px;
     border: none;
     cursor: pointer;
     border: 1px solid #e6e3e3;
+    @media (max-width: 690px) {
+      font-size: 10px;
+      padding: 3px 7px 3px 12px;
+    }
+    @media (max-width: 477px) {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+      }
     &:hover {
       box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
       transition: 0.3s;
     }
     input {
       border: none;
-      width: 83%;
+      margin-right: 40px;
       height: 30px;
     }
     i {
@@ -79,13 +93,10 @@ const Head = styled.header`
       position: relative;
       list-style: none;
       margin: 0 10px 0 10px;
-      a {
-        position: relative;
-        margin: 0 15px;
-        text-decoration: none;
-        color: #fff;
-        letter-spacing: 2px;
-        font-weight: 500px;
+      @media (max-width: 615px) {
+        visibility: hidden;
+        width: 0;
+        height: 0;
       }
     }
   }
