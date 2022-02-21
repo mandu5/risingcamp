@@ -2,7 +2,7 @@ import React from "react";
 import { ImInstagram, ImFacebook } from "react-icons/im";
 import { AiOutlineTwitter, AiOutlineGlobal } from "react-icons/ai";
 import naverBlog from "../../assets/img/naverblog.jpg";
-import naverPost from "../../assets/img/naverpost.jpg"
+import naverPost from "../../assets/img/naverpost.jpg";
 import styled from "styled-components";
 
 const Footers = styled.div`
@@ -15,12 +15,21 @@ const Footers = styled.div`
     border-bottom: 1px solid rgb(224, 221, 221);
     margin: 0 6% 30px 6%;
     padding-bottom: 30px;
+    @media (max-width: 991px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 611px) {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
     ul {
       list-style: none;
       li {
         margin: 15px 0 15px 0;
         font-size: 15px;
         font-weight: 400;
+        cursor: pointer;
       }
     }
   }
@@ -30,6 +39,7 @@ const Footers = styled.div`
     .left {
       font-weight: 400;
       font-size: 14px;
+      cursor: pointer;
     }
     .right {
       float: right;
@@ -37,6 +47,7 @@ const Footers = styled.div`
     .underline {
       text-decoration: underline;
       margin-left: 5px;
+      cursor: pointer;
     }
     .underline,
     .fa fa-facebook,
@@ -47,6 +58,7 @@ const Footers = styled.div`
     }
     .icon {
       margin: 0 10px 0 10px;
+      cursor: pointer;
     }
   }
 `;
@@ -105,9 +117,9 @@ function Footer() {
           <AiOutlineGlobal />
           <span className="underline">한국어 (KR)</span>₩
           <span className="underline">KRW</span>
-          <ImFacebook className="icon"/>
-          <AiOutlineTwitter className="icon"/>
-          <ImInstagram className="icon"/>
+          <ImFacebook className="icon" />
+          <AiOutlineTwitter className="icon" />
+          <ImInstagram className="icon" />
           <img
             style={{ width: "20px", height: "20px", marginLeft: "10px" }}
             src={naverBlog}

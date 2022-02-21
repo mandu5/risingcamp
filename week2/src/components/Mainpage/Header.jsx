@@ -146,19 +146,18 @@ const Head = styled.header`
     }
     label {
       @media (max-width: 991px) {
-        /* 중앙정렬 */
         visibility: visible;
-        position: fixed;
-        width: 300px;
-        justify-content: center;
-        align-items: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
         background-color: #fff;
         border-radius: 100px;
         font-size: 15px;
         padding: 20px 20px 20px 0px;
-        width: 65%;
-        margin-left: 10%;
+        margin-top: 90px;
+        width: 300px;
         cursor: pointer;
       }
       span {
@@ -187,9 +186,6 @@ const Head = styled.header`
     background-color: #fff;
     color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-    @media (max-width: 991px) {
-      visibility: hidden;
-    }
     ul {
       li {
         color: #000;
@@ -213,6 +209,14 @@ const Head = styled.header`
     .selections {
       visibility: hidden;
       width: 0;
+    }
+    label {
+      visibility: hidden;
+    }
+    label {
+      span {
+        visibility: hidden;
+      }
     }
     .selections2 {
       visibility: visible;

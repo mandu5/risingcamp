@@ -18,6 +18,11 @@ const Drop = styled.div`
       top: 50px;
       visibility: visible;
       opacity: 1;
+      @media (max-width: 1200px) {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+      }
     }
     h3 {
       width: 87%;

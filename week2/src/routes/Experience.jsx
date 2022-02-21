@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Filter from "../components/Experience/Filter";
 import Header from "../components/Experience/Header";
 import Section from "../components/Experience/Section";
 import { Footer } from "../components/Mainpage";
@@ -22,17 +23,20 @@ function Experience() {
     setPopup(popup === "popup" ? "popup active" : "popup");
     setBlur(blur === "blur" ? "blur active" : "blur");
   };
-  // const dropDown = () => {
-
-  // }
+  const [pop, setPop] = useState("pop");
+  const filter = () => {
+    setPop(pop === "pop" ? "pop active" : "pop");
+    setBlur(blur === "blur" ? "blur active" : "blur");
+  };
   return (
     <>
       <Body className={blur}>
         <Header toggle={toggle} />
-        <Section />
+        <Section filter={filter} />
         <Footer />
       </Body>
       <Popup toggle={toggle} popup={popup} />
+      <Filter filter={filter} pop={pop} />
     </>
   );
 }

@@ -1,0 +1,15 @@
+export { default as A } from "./1.jpg";
+export { default as B } from "./2.jpg";
+export { default as C } from "./3.jpg";
+export { default as D } from "./4.jpg";
+export { default as E } from "./5.jpg";
+export { default as F } from "./6.jpg";
+export { default as G } from "./7.jpg";
+export { default as H } from "./8.jpg";
+export { default as I } from "./9.jpg";
+export { default as J } from "./10.jpg";
+export { default as K } from "./11.jpg";
+export { default as L } from "./12.jpg";
+export { default as M } from "./13.jpg";
+export { default as N } from "./14.jpg";
+export { default as O } from "./15.jpg";

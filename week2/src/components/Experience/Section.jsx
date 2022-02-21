@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaAngleDown } from "react-icons/fa";
 import { BiTransfer } from "react-icons/bi";
 import styled from "styled-components";
@@ -21,6 +21,7 @@ import {
 } from "../../assets/img-nearby";
 import videoSrc from "../../assets/video/1.mp4";
 import { data, data1, data2 } from "./data";
+import Dropdown from "./Dropdown";
 
 const Sections = styled.section`
   background-color: #fff;
@@ -217,13 +218,17 @@ const Sections = styled.section`
   }
 `;
 
-function Section() {
+function Section({ filter }) {
+  const [dropdown, setDropdown] = useState("dropdown");
+  const dropToggle = () => {
+    setDropdown(dropdown === "dropdown" ? "dropdown active" : "dropdown");
+  };
   return (
     <Sections>
       <div className="border1">
         <div className="input">
           <span>
-            인원 <FaAngleDown />
+            <Dropdown dropToggle={dropToggle} dropdown={dropdown} />
           </span>
           <span>
             요금 <FaAngleDown />
@@ -242,7 +247,7 @@ function Section() {
           <span>관광</span>
           <span>웰빙</span>
           <span>자연 및 야외활동</span>
-          <span>
+          <span onClick={filter}>
             <BiTransfer />
             필터
           </span>

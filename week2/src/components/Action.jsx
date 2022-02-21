@@ -40,6 +40,11 @@ const Actions = styled.div`
       top: 50px;
       visibility: visible;
       opacity: 1;
+      @media (max-width: 991px) {
+      visibility: hidden;
+      width: 0;
+      height: 0;
+    }
     }
     h3 {
       width: 100%;
@@ -58,7 +63,7 @@ const Actions = styled.div`
   }
 `;
 
-function Action({toggle}) {
+function Action({ toggle }) {
   const [menu, setMenu] = useState("menu");
   const menuToggle = () => {
     setMenu(menu === "menu" ? "menu active" : "menu");

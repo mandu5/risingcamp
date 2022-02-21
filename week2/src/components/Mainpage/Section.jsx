@@ -8,7 +8,7 @@ const Sections = styled.section`
   color: #000;
   padding: 30px 0 20px 0;
   .margin {
-    margin: 0 5% 0 5%;
+    margin: 0 20px 0 20px;
   }
   .title {
     display: flex;
@@ -143,6 +143,9 @@ const Sections = styled.section`
       margin: 110px 0 0 60px;
       &:hover {
         background-color: rgb(211, 210, 210);
+      }
+      @media (max-width: 991px) {
+        visibility: hidden;
       }
     }
   }
