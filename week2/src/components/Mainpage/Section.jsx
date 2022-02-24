@@ -6,7 +6,7 @@ import { b, c, d, e, f, g, h } from "../../assets/img";
 const Sections = styled.section`
   background-color: #fff;
   color: #000;
-  padding: 30px 0 20px 0;
+  padding: 30px 5% 20px 5%;
   .title {
     display: flex;
     font-size: 48px;

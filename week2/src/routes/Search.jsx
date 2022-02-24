@@ -28,15 +28,24 @@ function Search() {
     setPop(pop === "pop" ? "pop active" : "pop");
     setBlur(blur === "blur" ? "blur active" : "blur");
   };
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <>
-      <Body className={blur}>
-        <Header toggle={toggle} filter={filter} />
-        <Section />
-        <Footer />
-      </Body>
-      <Popup toggle={toggle} popup={popup} />
-      <Filter filter={filter} pop={pop} />
+      {isLoading ? (
+        <>
+          <h1>Loading</h1>
+        </>
+      ) : (
+        <>
+          <Body className={blur}>
+            <Header toggle={toggle} filter={filter} />
+            <Section />
+            <Footer />
+          </Body>
+          <Popup toggle={toggle} popup={popup} />
+          <Filter filter={filter} pop={pop} />
+        </>
+      )}
     </>
   );
 }
