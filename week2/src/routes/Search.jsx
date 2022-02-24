@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Popup from "../components/Popup";
 import Filter from "../components/Search/Filter";
 import { Footer } from "../components/Search";
 import Header from "../components/Search/Header";
 import Section from "../components/Search/Section";
+import Loading from "../components/Search/Loading";
 
 const Body = styled.div`
   min-height: 100%;
@@ -16,7 +17,7 @@ const Body = styled.div`
   }
 `;
 
-function Search() {
+const Search = React.memo(() => {
   const [popup, setPopup] = useState("popup");
   const [blur, setBlur] = useState("blur");
   const toggle = () => {
@@ -28,18 +29,39 @@ function Search() {
     setPop(pop === "pop" ? "pop active" : "pop");
     setBlur(blur === "blur" ? "blur active" : "blur");
   };
-  const [isLoading, setIsLoading] = useState(false);
+
+  const [data, setData] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const dataRequest = () => {
+    setData(data === false ? true : false);
+  };
+  useEffect(() => {
+    if (data) {
+      setLoading(false);
+    } else {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 5000);
+    }
+  }, [data]);
   return (
     <>
-      {isLoading ? (
+      {loading ? (
         <>
-          <h1>Loading</h1>
+          <Body className={blur}>
+            <Header toggle={toggle} filter={filter} />
+            <Loading dataRequest={dataRequest} />
+            <Footer />
+          </Body>
+          <Popup toggle={toggle} popup={popup} />
+          <Filter filter={filter} pop={pop} />
         </>
       ) : (
         <>
           <Body className={blur}>
             <Header toggle={toggle} filter={filter} />
-            <Section />
+            <Section dataRequest={dataRequest} />
             <Footer />
           </Body>
           <Popup toggle={toggle} popup={popup} />
@@ -48,6 +70,6 @@ function Search() {
       )}
     </>
   );
-}
+});
 
 export default Search;

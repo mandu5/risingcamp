@@ -25,7 +25,6 @@ const Sections = styled.section`
   color: #000;
   padding-top: 30px;
   padding-bottom: 20px;
-  margin-top: 150px;
   @media (max-width: 991px) {
     margin-top: 70px;
   }
@@ -150,31 +149,49 @@ const Sections = styled.section`
     }
   }
 `;
+const Button = styled.button`
+  position: relative;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -50%);
+  padding: 15px 20px;
+  margin-top: 180px;
+  border-radius: 10px;
+  background-color: antiquewhite;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  }
+`;
 
-function Section() {
+function Section({ dataRequest }) {
   return (
-    <Sections>
-      <div className="margin">
-        <div className="tabs">
-          {data.map((item) => (
-            <div key={item.image}>
-              <div className="tab1">
-                <div className={item.image}></div>
-                <span className="city">
-                  {item.city}
-                  <span className="right">{item.price} / 박</span>
-                </span>
-                <br />
-                <span className="distance">
-                  {item.distance}
-                  <span className="right">{item.date}</span>
-                </span>
+    <>
+      <Button onClick={dataRequest}>데이터 새로고침</Button>
+      <Sections>
+        <div className="margin">
+          <div className="tabs">
+            {data.map((item) => (
+              <div key={item.image}>
+                <div className="tab1">
+                  <div className={item.image}></div>
+                  <span className="city">
+                    {item.city}
+                    <span className="right">{item.price} / 박</span>
+                  </span>
+                  <br />
+                  <span className="distance">
+                    {item.distance}
+                    <span className="right">{item.date}</span>
+                  </span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </Sections>
+      </Sections>
+    </>
   );
 }
 
