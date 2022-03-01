@@ -23,11 +23,8 @@ import { data } from "./data";
 const Sections = styled.section`
   background-color: #fff;
   color: #000;
-  padding-top: 30px;
+  padding-top: 150px;
   padding-bottom: 20px;
-  @media (max-width: 991px) {
-    margin-top: 70px;
-  }
   .margin {
     margin-right: 5%;
     margin-left: 5%;
@@ -149,26 +146,10 @@ const Sections = styled.section`
     }
   }
 `;
-const Button = styled.button`
-  position: relative;
-  left: 50%;
-  top: 0%;
-  transform: translate(-50%, -50%);
-  padding: 15px 20px;
-  margin-top: 180px;
-  border-radius: 10px;
-  background-color: antiquewhite;
-  border: none;
-  cursor: pointer;
-  &:hover {
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  }
-`;
 
-function Section({ dataRequest }) {
+function Section() {
   return (
     <>
-      <Button onClick={dataRequest}>데이터 새로고침</Button>
       <Sections>
         <div className="margin">
           <div className="tabs">

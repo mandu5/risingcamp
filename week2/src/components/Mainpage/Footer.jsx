@@ -15,10 +15,6 @@ const Footers = styled.div`
     border-bottom: 1px solid rgb(224, 221, 221);
     margin: 0 6% 30px 6%;
     padding-bottom: 30px;
-    @media (max-width: 991px) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
     @media (max-width: 611px) {
       display: grid;
       grid-template-columns: repeat(1, 1fr);

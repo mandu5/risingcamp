@@ -61,7 +61,7 @@ const Search = React.memo(() => {
         <>
           <Body className={blur}>
             <Header toggle={toggle} filter={filter} />
-            <Section dataRequest={dataRequest} />
+            <Section />
             <Footer />
           </Body>
           <Popup toggle={toggle} popup={popup} />

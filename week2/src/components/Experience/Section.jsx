@@ -26,7 +26,10 @@ import Dropdown from "./Dropdown";
 const Sections = styled.section`
   background-color: #fff;
   color: #000;
-  padding-bottom: 20px;
+  margin: 0 60px 20px 60px;
+  @media (max-width: 1200px) {
+    margin: 0 0 20px 0;
+  }
   .input {
     display: flex;
     justify-content: center;
@@ -93,6 +96,9 @@ const Sections = styled.section`
       }
       @media (max-width: 717px) {
         font-size: 15px;
+      }
+      @media (max-width: 475px) {
+        visibility: hidden;
       }
     }
     .video {
