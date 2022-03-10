@@ -25,6 +25,10 @@ const Footers = styled.div`
         margin: 15px 0 15px 0;
         font-size: 15px;
         font-weight: 400;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -34,6 +38,9 @@ const Footers = styled.div`
     .left {
       font-weight: 400;
       font-size: 14px;
+      &:hover {
+        cursor: pointer;
+      }
     }
     .right {
       float: right;
@@ -109,9 +116,9 @@ function Footer() {
           <AiOutlineGlobal />
           <span className="underline">한국어 (KR)</span>₩
           <span className="underline">KRW</span>
-          <ImFacebook className="icon"/>
-          <AiOutlineTwitter className="icon"/>
-          <ImInstagram className="icon"/>
+          <ImFacebook className="icon" />
+          <AiOutlineTwitter className="icon" />
+          <ImInstagram className="icon" />
           <img
             style={{ width: "20px", height: "20px", marginLeft: "10px" }}
             src={naverBlog}

@@ -117,6 +117,7 @@ const Head = styled.header`
       font-weight: 700;
       font-size: 20px;
       margin-left: 5px;
+      cursor: pointer;
     }
   }
   .selections {
@@ -176,8 +177,14 @@ const Head = styled.header`
     margin-right: -20px;
     li {
       list-style: none;
-      margin: 0 15px;
+      margin: 0 5px;
       text-decoration: none;
+      padding: 10px 10px 10px 10px;
+      &:hover {
+        cursor: pointer;
+        background-color: #222;
+        border-radius: 20px;
+      }
     }
   }
   &.sticky {
@@ -288,9 +295,7 @@ function Header({ toggle }) {
             <li>
               <AiOutlineGlobal />
             </li>
-            <li>
-              <Action toggle={toggle} />
-            </li>
+            <Action toggle={toggle} />
           </ul>
         </div>
       </div>
@@ -319,9 +324,13 @@ function Header({ toggle }) {
             <Calendar onChange={onChange} />
           </div>
         </div>
-        <div className="border">
+        <div className="border" >
           <div className="bold">인원</div>
           <div className="subs">게스트 추가</div>
+          <div id="calendar" className={calendar}>
+            <Calendar onChange={onChange} />
+            <Calendar onChange={onChange} />
+          </div>
         </div>
         <i>
           <ImSearch />

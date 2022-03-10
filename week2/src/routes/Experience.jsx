@@ -17,7 +17,7 @@ const Body = styled.div`
   }
 `;
 
-function Experience() {
+function Experience() { // 자식컴포넌트(드롭다운) 클릭시 부모컴포넌트(배경) blur처리하기 등등 redux교체
   const [popup, setPopup] = useState("popup");
   const [blur, setBlur] = useState("blur");
   const toggle = () => {

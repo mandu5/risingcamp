@@ -43,10 +43,35 @@ const Banners = styled.div`
     }
   }
 `;
+const Ukraine = styled.div`
+  width: 100%auto;
+  height: 360px;
+  border-radius: 15px;
+  background-color: #ff385c;
+  margin: 30px 0 100px 0;
+  padding-top: 120px;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 48px;
+  button {
+    background-color: #ff385c;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+`;
 
 function Banner() {
   return (
     <Black>
+      <Ukraine>
+        10만 명에 달하는 우크라이나 피란민에게 임시
+        <br /> 숙소를 제공해주세요
+        <br />
+        <button>자세히 알아보기</button>
+      </Ukraine>
       <Banners>
         <div>
           <div className="title">

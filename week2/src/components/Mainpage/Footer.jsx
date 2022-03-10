@@ -25,7 +25,10 @@ const Footers = styled.div`
         margin: 15px 0 15px 0;
         font-size: 15px;
         font-weight: 400;
-        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -35,7 +38,9 @@ const Footers = styled.div`
     .left {
       font-weight: 400;
       font-size: 14px;
-      cursor: pointer;
+      &:hover {
+        cursor: pointer;
+      }
     }
     .right {
       float: right;
