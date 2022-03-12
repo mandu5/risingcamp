@@ -1,31 +1,37 @@
 import React from "react";
+import styled from "styled-components";
+
+const Lists = styled.div`
+display: grid;
+grid-template-columns: repeat(2, 1fr);;
+`;
 
 function ListData({ presentData, pastData }) {
   return (
-    <>
+    <Lists>
       <ul>
-        {presentData.map((date, index) => {
+        {presentData.map((item, index) => {
           return (
             <li key={index}>
-              {date.tm}
-              {date.stnNm}
-              {date.ta + "˚C"}
+              {item.tm}
+              {item.stnNm}
+              {item.ta + "˚C"}
             </li>
           );
         })}
       </ul>
       <ul>
-        {pastData.map((date, index) => {
+        {pastData.map((item, index) => {
           return (
             <li key={index}>
-              {date.tm}
-              {date.stnNm}
-              {date.ta + "˚C"}
+              {item.tm}
+              {item.stnNm}
+              {item.ta + "˚C"}
             </li>
           );
         })}
       </ul>
-    </>
+    </Lists>
   );
 }
 

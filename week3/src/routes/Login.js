@@ -50,7 +50,6 @@ function Login() {
     await authService.signInWithPopup(provider);
     setIsLoggedIn(true);
   };
-  console.log("x")
   return (
     <>
       <Main>

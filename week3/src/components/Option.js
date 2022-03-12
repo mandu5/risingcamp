@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 
-function Option({ setSelect }) {
-  const [date, setDate] = useState("");
-  const [hour, setHour] = useState("");
+function Option({ setCity, setDate }) {
   return (
     <>
       <select
         required
         className="select"
-        onChange={(e) => setSelect(e.target.value)}
+        onChange={(e) => setCity(e.target.value)}
       >
         <option value="108">서울</option>
         <option value="112">인천</option>
@@ -25,8 +23,7 @@ function Option({ setSelect }) {
         <option value="184">제주</option>
       </select>
       {/* 달력 */}
-      <input type="date" onChange={(e) => setDate(e.target.value)}></input>
-      <input type="time" onChange={(e) => setHour(e.target.value)}></input>
+      <input type="date" onChange={(e) => setDate((e.target.value).replace(/-/g, ""))}></input>
     </>
   );
 }
