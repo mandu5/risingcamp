@@ -9,14 +9,22 @@ const Home = React.memo(() => {
   const ServiceKey = process.env.REACT_APP_SERVICE_KEY;
   const [presentData, setPresentData] = useState([""]);
   const [pastData, setPastData] = useState([""]);
-  const [city, setCity] = useState("108");
-  const [date, setDate] = useState("20120306");
   const [loading, setLoading] = useState(true);
+  const [city, setCity] = useState("108");
+  // date
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = ("0" + (today.getMonth() + 1)).slice(-2);
+  const day = ("0" + today.getDate()).slice(-2);
+  const dateString = year + month + (day - 2);
+  const [date, setDate] = useState(dateString);
+  // date 20200101 문자열 3번째 10년자리 숫자 하나 - (문자열 가르고)
   useEffect(() => {
     getPresentWeather();
     getPastWeather();
     setLoading(true);
   }, [city, date]);
+
   const getPresentWeather = async () => {
     let queryParams = "?" + encodeURIComponent("ServiceKey") + `=${ServiceKey}`;
     queryParams +=
@@ -85,13 +93,12 @@ const Home = React.memo(() => {
         method: "get",
         url: url,
       });
-      //   console.log(response.data.response.body.items);
       setPastData(response.data.response.body.items.item);
       setLoading(false);
     } catch (err) {
       console.log(err);
     }
-  };
+  }; 
 
   return (
     <>

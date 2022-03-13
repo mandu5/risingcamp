@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { isEmailAtom, isLoggedInAtom, isNameAtom } from "../atoms";
+import { useRecoilValue } from "recoil";
+import { isEmailAtom, isNameAtom } from "../atoms";
 import LogoutButton from "./LogoutButton";
 import Option from "./Option";
-import { authService } from "../myBase";
 
 const SHeader = styled.header`
   width: 100%;
@@ -29,18 +28,7 @@ const Profile = styled.div``;
 function Navbar({ setCity, setDate }) {
   const name = useRecoilValue(isNameAtom);
   const email = useRecoilValue(isEmailAtom);
-  const setIsLoggedIn = useSetRecoilState(isLoggedInAtom);
-  const setName = useSetRecoilState(isNameAtom);
-  const setEmail = useSetRecoilState(isEmailAtom);
-  useEffect(() => {
-    authService.onAuthStateChanged((loggedIn) => {
-      loggedIn ? setIsLoggedIn(true) : setIsLoggedIn(false);
-      const email = loggedIn.email;
-      const name = loggedIn.displayName;
-      setName(name);
-      setEmail(email);
-    });
-  }, [setEmail, setIsLoggedIn, setName]);
+  
   return (
     <SHeader>
       <Wrapper>
@@ -48,7 +36,7 @@ function Navbar({ setCity, setDate }) {
           <h1>과거와 현재</h1>
         </Column>
         <Column>
-        <Option setCity={setCity} setDate={setDate} />
+          <Option setCity={setCity} setDate={setDate} />
         </Column>
         <Column>
           <Profile>

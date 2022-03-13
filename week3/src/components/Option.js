@@ -22,7 +22,6 @@ function Option({ setCity, setDate }) {
         <option value="156">광주</option>
         <option value="184">제주</option>
       </select>
-      {/* 달력 */}
       <input type="date" onChange={(e) => setDate((e.target.value).replace(/-/g, ""))}></input>
     </>
   );
