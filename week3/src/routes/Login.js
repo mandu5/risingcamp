@@ -14,7 +14,7 @@ const Main = styled.div`
     box-sizing: border-box;
     border-radius: 5px;
     background: #fff;
-    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.5);
     #google {
       font-size: 20px;
       font-weight: 100;
@@ -29,11 +29,12 @@ const Main = styled.div`
         border-radius: 5px;
         box-shadow: 0 0 5px rgb(242, 130, 130), 0 0 15px rgb(242, 130, 130),
           0 0 20px rgb(242, 130, 130), 0 0 50px rgb(242, 130, 130);
+        cursor: pointer;
       }
     }
   }
   .title {
-    color: ${(props) => props.theme.textColor};
+    color: #8785ef;
   }
 `;
 

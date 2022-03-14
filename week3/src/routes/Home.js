@@ -1,16 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Loading from "../components/Loading";
 import ListData from "../components/ListData";
 import Navbar from "../components/Navbar";
 import AverageTemp from "../components/AverageTemp";
+import styled from "styled-components";
+
+const Title = styled.h1`
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+`;
 
 const Home = React.memo(() => {
   const ServiceKey = process.env.REACT_APP_SERVICE_KEY;
   const [presentData, setPresentData] = useState([""]);
   const [pastData, setPastData] = useState([""]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState(false);
   const [city, setCity] = useState("108");
+  const [cityTwo, setCityTwo] = useState("159");
   // date
   const today = new Date();
   const year = today.getFullYear();
@@ -18,12 +29,13 @@ const Home = React.memo(() => {
   const day = ("0" + today.getDate()).slice(-2);
   const dateString = year + month + (day - 2);
   const [date, setDate] = useState(dateString);
-  // date 20200101 문자열 3번째 10년자리 숫자 하나 - (문자열 가르고)
-  useEffect(() => {
+  const [dateTwo, setDateTwo] = useState(dateString);
+
+  const onClick = () => {
     getPresentWeather();
     getPastWeather();
     setLoading(true);
-  }, [city, date]);
+  };
 
   const getPresentWeather = async () => {
     let queryParams = "?" + encodeURIComponent("ServiceKey") + `=${ServiceKey}`;
@@ -58,6 +70,7 @@ const Home = React.memo(() => {
       });
       setPresentData(response.data.response.body.items.item);
       setLoading(false);
+      setData(true);
     } catch (err) {
       console.log(err);
     }
@@ -75,15 +88,24 @@ const Home = React.memo(() => {
     queryParams +=
       "&" + encodeURIComponent("dateCd") + "=" + encodeURIComponent("HR");
     queryParams +=
-      "&" + encodeURIComponent("startDt") + "=" + encodeURIComponent(`${date}`);
+      "&" +
+      encodeURIComponent("startDt") +
+      "=" +
+      encodeURIComponent(`${dateTwo}`);
     queryParams +=
       "&" + encodeURIComponent("startHh") + "=" + encodeURIComponent("00");
     queryParams +=
-      "&" + encodeURIComponent("endDt") + "=" + encodeURIComponent(`${date}`);
+      "&" +
+      encodeURIComponent("endDt") +
+      "=" +
+      encodeURIComponent(`${dateTwo}`);
     queryParams +=
       "&" + encodeURIComponent("endHh") + "=" + encodeURIComponent("23");
     queryParams +=
-      "&" + encodeURIComponent("stnIds") + "=" + encodeURIComponent(`${city}`);
+      "&" +
+      encodeURIComponent("stnIds") +
+      "=" +
+      encodeURIComponent(`${cityTwo}`);
     let url =
       "https://secret-ocean-49799.herokuapp.com/http://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList" +
       queryParams;
@@ -95,20 +117,35 @@ const Home = React.memo(() => {
       });
       setPastData(response.data.response.body.items.item);
       setLoading(false);
+      setData(true);
     } catch (err) {
       console.log(err);
     }
-  }; 
+  };
 
   return (
     <>
-      <Navbar setCity={setCity} setDate={setDate} />
+      <Navbar
+        setCity={setCity}
+        setDate={setDate}
+        setCityTwo={setCityTwo}
+        setDateTwo={setDateTwo}
+        onClick={onClick}
+      />
       {loading ? (
         <Loading />
       ) : (
         <>
-          <AverageTemp presentData={presentData} pastData={pastData} />
-          <ListData presentData={presentData} pastData={pastData} />
+          {data ? (
+            <>
+              <AverageTemp presentData={presentData} pastData={pastData} />
+              <ListData presentData={presentData} pastData={pastData} />
+            </>
+          ) : (
+            <>
+              <Title>도시와 날짜를 선택해주세요</Title>
+            </>
+          )}
         </>
       )}
     </>
