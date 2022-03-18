@@ -14,6 +14,7 @@ const Button = styled.button`
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
   }
 `;
+
 function LogoutButton() {
   const onLogOutClick = () => authService.signOut();
   return <Button onClick={onLogOutClick}>Log Out</Button>;

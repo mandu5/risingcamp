@@ -1,17 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 import moment from "moment";
+import { BsSnow2, BsFillSunFill } from "react-icons/bs";
 
 const Head = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
+  color: #fff;
   .city {
     font-size: 20px;
     color: #fefedf;
   }
   .average {
     text-decoration: underline;
+  }
+  .sun {
+    color: red;
   }
 `;
 const Result = styled.div`
@@ -41,6 +46,13 @@ function AverageTemp({ presentData, pastData }) {
         <div>
           <p className="city">{presentData[0].stnNm}</p>
           <p>{moment(presentData[0].tm).format("MMMM Do YYYY")}</p>
+          <p>
+            {presentAverage > 0 ? (
+              <BsFillSunFill className="sun" />
+            ) : (
+              <BsSnow2 />
+            )}
+          </p>
           <div className="average">
             <span>평균 기온: </span>
             <span>
@@ -52,6 +64,13 @@ function AverageTemp({ presentData, pastData }) {
         <div>
           <p className="city">{pastData[0].stnNm}</p>
           <p>{moment(pastData[0].tm).format("MMMM Do YYYY")}</p>
+          <p>
+            {pastAverage > 0 ? (
+              <BsFillSunFill className="sun" />
+            ) : (
+              <BsSnow2 />
+            )}
+          </p>
           <div className="average">
             <span>평균 기온: </span>
             <span>

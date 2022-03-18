@@ -36,11 +36,9 @@ const Home = React.memo(() => {
     getPastWeather();
     setLoading(true);
   };
-
+  
   const getPresentWeather = async () => {
     let queryParams = "?" + encodeURIComponent("ServiceKey") + `=${ServiceKey}`;
-    queryParams +=
-      "&" + encodeURIComponent("pageNo") + "=" + encodeURIComponent("1");
     queryParams +=
       "&" + encodeURIComponent("dataType") + "=" + encodeURIComponent("json");
     queryParams +=
@@ -60,7 +58,7 @@ const Home = React.memo(() => {
     queryParams +=
       "&" + encodeURIComponent("stnIds") + "=" + encodeURIComponent(`${city}`);
     let url =
-      "https://secret-ocean-49799.herokuapp.com/http://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList" +
+      "https://cors-anywhere.herokuapp.com/http://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList" +
       queryParams;
 
     try {
@@ -78,11 +76,9 @@ const Home = React.memo(() => {
   const getPastWeather = async () => {
     let queryParams = "?" + encodeURIComponent("ServiceKey") + `=${ServiceKey}`;
     queryParams +=
-      "&" + encodeURIComponent("pageNo") + "=" + encodeURIComponent("1");
+      "&" + encodeURIComponent("dataType") + "=" + encodeURIComponent("json");
     queryParams +=
       "&" + encodeURIComponent("numOfRows") + "=" + encodeURIComponent("24");
-    queryParams +=
-      "&" + encodeURIComponent("dataType") + "=" + encodeURIComponent("json");
     queryParams +=
       "&" + encodeURIComponent("dataCd") + "=" + encodeURIComponent("ASOS");
     queryParams +=
@@ -107,7 +103,7 @@ const Home = React.memo(() => {
       "=" +
       encodeURIComponent(`${cityTwo}`);
     let url =
-      "https://secret-ocean-49799.herokuapp.com/http://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList" +
+      "https://cors-anywhere.herokuapp.com/http://apis.data.go.kr/1360000/AsosHourlyInfoService/getWthrDataList" +
       queryParams;
 
     try {

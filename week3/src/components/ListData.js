@@ -1,11 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import moment from "moment";
+import Chart from "./Chart";
 
 const Lists = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  text-align: center;
   ul {
     list-style: none;
     display: grid;
@@ -24,26 +21,7 @@ const Lists = styled.div`
 function ListData({ presentData, pastData }) {
   return (
     <Lists>
-      <ul>
-        {presentData.map((item, index) => {
-          return (
-            <li key={index}>
-              <span>{moment(item.tm).format("h:mm a")}</span>
-              <span className="temperature">{item.ta + "˚C"}</span>
-            </li>
-          );
-        })}
-      </ul>
-      <ul>
-        {pastData.map((item, index) => {
-          return (
-            <li key={index}>
-              <span>{moment(item.tm).format(" h:mm a")}</span>
-              <span className="temperature">{item.ta + "˚C"}</span>
-            </li>
-          );
-        })}
-      </ul>
+      <Chart presentData={presentData} pastData={pastData}/>
     </Lists>
   );
 }

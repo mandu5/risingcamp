@@ -7,7 +7,6 @@ import Routers from "./Router";
 
 const GlobalStyle = createGlobalStyle`
   html{
-    color: #FAF7FF;
     background-color: #807BC0;
   }
 `;
